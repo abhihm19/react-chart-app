@@ -1,0 +1,122 @@
+[
+    {
+        "domainId": 1,
+        "domainName": "Frontend",
+        "technologies": [
+            {
+                "technologyId": 1,
+                "technologyName": "Angular JS",
+                "employees": [
+                    {
+                        "empId": "1",
+                        "name": "AAA",
+                        "designation": "PAT",
+                        "grade": "C"
+                    },
+                    {
+                        "empId": "3",
+                        "name": "CCC",
+                        "designation": "SE",
+                        "grade": "B"
+                    },
+                    {
+                        "empId": "5",
+                        "name": "EEE",
+                        "designation": "SSE",
+                        "grade": "A"
+                    },
+                    {
+                        "empId": "4",
+                        "name": "DDD",
+                        "designation": "ASE",
+                        "grade": "B"
+                    }
+                ]
+            },
+            {
+                "technologyId": 2,
+                "technologyName": "Vue JS",
+                "employees": [
+                    {
+                        "empId": "1",
+                        "name": "AAA",
+                        "designation": "PAT",
+                        "grade": "C"
+                    },
+                    {
+                        "empId": "2",
+                        "name": "BBB",
+                        "designation": "ASE",
+                        "grade": "B"
+                    },
+                    {
+                        "empId": "3",
+                        "name": "CCC",
+                        "designation": "SE",
+                        "grade": "B"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "domainId": 2,
+        "domainName": "Backend",
+        "technologies": [
+            {
+                "technologyId": 3,
+                "technologyName": "Java",
+                "employees": [
+                    {
+                        "empId": "1",
+                        "name": "AAA",
+                        "designation": "PAT",
+                        "grade": "C"
+                    },
+                    {
+                        "empId": "2",
+                        "name": "BBB",
+                        "designation": "ASE",
+                        "grade": "B"
+                    },
+                    {
+                        "empId": "4",
+                        "name": "DDD",
+                        "designation": "SSE",
+                        "grade": "A"
+                    },
+                    {
+                        "empId": "7",
+                        "name": "GGG",
+                        "designation": "PAT",
+                        "grade": "D"
+                    }
+                ]
+            },
+            {
+                "technologyId": 4,
+                "technologyName": "Python",
+                "employees": [
+                    {
+                        "empId": "3",
+                        "name": "CCC",
+                        "designation": "SE",
+                        "grade": "B"
+                    },
+                    {
+                        "empId": "5",
+                        "name": "EEE",
+                        "designation": "SSE",
+                        "grade": "A"
+                    },
+                    {
+                        "empId": "7",
+                        "name": "GGG",
+                        "designation": "PAT",
+                        "grade": "C"
+                    }
+                ]
+            }
+        ]
+    }
+]
