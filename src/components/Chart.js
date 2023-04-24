@@ -1,32 +1,10 @@
-import jsonData from './data.json';
-import { useState } from 'react';
 import { Chart as Chartjs, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
-export const App = () => {
 
-  const [domainName, setDomainName] = useState('');
-  const [technologies, setTechnologies] = useState([]);
-  const [employees, setEmployees] = useState([]);
+import React from 'react'
 
-
-  const handleDomainChange = e => {
-    const selectedDomainName = e.target.value;
-    setDomainName(selectedDomainName);
-    const selectedDomain = jsonData.find(d => d.domainName === selectedDomainName);
-    // console.log(selectedDomain.technologies);
-    setTechnologies(selectedDomain?.technologies || []);
-  };
-
-  const handleTechnologyChange = e => {
-    const selectedTechnologyName = e.target.value;
-    const selectedTechnology = technologies.find(t => t.technologyName === selectedTechnologyName);
-    console.log(selectedTechnology);
-    setEmployees(selectedTechnology?.employees);
-
-    console.log(employees)
-  }
-
+export const Chart = ({employees}) => {
   const htmlLegendPlugin = {
     id: 'htmlLegend',
     afterUpdate(chart, args, options) {
@@ -123,16 +101,16 @@ export const App = () => {
   function getCount(employees) {
     console.log("get count")
     console.log(employees)
-    let A = 0, B = 0, C = 0, D = 0;
-    if (employees.length > 0) {
+    let A=0, B=0, C=0, D=0;
+    if(employees.length > 0) {
       employees.map(employee => {
-        if (employee.grade == 'A') A++;
-        else if ((employee.grade == 'B')) B++;
-        else if ((employee.grade == 'C')) C++;
-        else if ((employee.grade == 'D')) D++;
+        if(employee.grade == 'A') A++;
+        else if((employee.grade == 'B')) B++;
+        else if((employee.grade == 'C')) C++;
+        else if((employee.grade == 'D')) D++;
       })
     }
-
+    
     return [A, B, C, D];
   }
 
@@ -146,43 +124,21 @@ export const App = () => {
     }],
     options: options
   }
+
+
+
   return (
-    <>
-      <div className="Dropdown">
-        <h1 style={{ textAlign: "center" }}>Skill Matrix</h1>
-        <div>
-          <label htmlFor="domain">Domain:</label>
-          <select name="domains" id="domains" onChange={handleDomainChange}>
-            <option value="">Select a Domain</option>
-            {jsonData.map(domain => (
-              <option value={domain.domainName} key={domain.domainId}>{domain.domainName}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="technology">Technology:</label>
-          <select name="technologies" id="technologies" onChange={handleTechnologyChange}>
-            <option value="select-technology">Select a technology</option>
-            {technologies.map(technology => (
-              <option value={technology.technologyName} key={technology.technologyId}>{technology.technologyName}</option>
-            ))}
-          </select>
-        </div>
-        <div className="Chart">
-          {employees.length > 0 &&
-            <div style={{ width: "30%", height: "30%", marginLeft: 'auto', marginRight: 'auto' }}>
-              <Doughnut
-                data={data}
-                options={options}
-              ></Doughnut>
-            </div>}
-          <div id="legend-container"></div>
-        </div>
-      </div>
-
-
-    </>
+    <div className="Chart"> 
+      { employees.length > 0 &&
+       <div style={{ width: "30%", height: "30%", marginLeft: 'auto', marginRight: 'auto' }}>
+        <Doughnut
+          data={data}
+          options={options}
+        ></Doughnut>
+      </div>}
+      <div id="legend-container"></div>
+    </div>
   );
 }
 
-export default App;
+export default Chart;
